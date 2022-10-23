@@ -30,6 +30,6 @@ int main() {
         std::cout << elm.neuronNumber << std::endl;
     }
     
-    
+
     return EXIT_SUCCESS;
 } 

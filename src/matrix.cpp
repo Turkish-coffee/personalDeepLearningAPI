@@ -80,24 +80,21 @@ void matrix::randomizeMatrix(const matrix &x1) {
 }
 
 
-matrix matrix::sum(const matrix &x1, const matrix &x2) {
+void matrix::sum(const matrix &x1, const matrix &x2, matrix &result) {
 
     try
     {
         if(x1.xDim != x2.xDim || x1.yDim != x2.yDim)
             throw "matrices dimensions not suitable to perform matrix addition";
         
-        matrix addedMatrix = matrix(x1.xDim, x1.yDim);
-
         for (int i = 0; i < x1.xDim; i++)
         {
             for (int j = 0; j < x2.yDim; j++)
             {
-                addedMatrix.head[i][j] = x1.head[i][j] + x2.head[i][j];
+                result.head[i][j] = x1.head[i][j] + x2.head[i][j];
             }
             
         }
-        return addedMatrix;
     }
     catch(const char *array)
     {
@@ -109,14 +106,12 @@ matrix matrix::sum(const matrix &x1, const matrix &x2) {
 }
 
 
-matrix matrix::multiply(const matrix &x1, const matrix &x2) {
+void matrix::multiply(const matrix &x1, const matrix &x2, matrix &result) {
 
     try
     {
         if(x1.yDim != x2.xDim)
             throw "matrices dimensions not suitable to perform matrix multiplication";
-
-            matrix multipliedMatrix = matrix(x1.xDim, x2.yDim);
 
             for (int i = 0; i < x1.xDim; i++)
             {
@@ -127,11 +122,10 @@ matrix matrix::multiply(const matrix &x1, const matrix &x2) {
                     {
                         sum += x1.head[i][k] * x2.head[k][j];
                     }
-                    multipliedMatrix.head[i][j] = sum;
+                    result.head[i][j] = sum;
                 }
                 
             }
-            return multipliedMatrix;
     }
     catch(const char *array)
     {

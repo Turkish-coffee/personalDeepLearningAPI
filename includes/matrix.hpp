@@ -15,6 +15,6 @@ class matrix {
 
         static void printMatrix(const matrix &x1);
         static void randomizeMatrix(const matrix &x1);
-        static matrix sum(const matrix &x1, const matrix &x2);
-        static matrix multiply(const matrix &x1, const matrix &x2);
+        static void sum(const matrix &x1, const matrix &x2, matrix &result);
+        static void multiply(const matrix &x1, const matrix &x2, matrix &result);
 };

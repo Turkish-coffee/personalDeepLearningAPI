@@ -3,14 +3,15 @@
 #include"../includes/ActivationFunction.hpp"
 
 
+// will be used only for the first layer
 Layer::Layer(unsigned int n_neuron, std::string activationFunctionName)
-    :activationFunction(activationFunctionName)
+    :activationFunction(activationFunctionName), neuronNumber(n_neuron)
 {
-    this->neuronNumber = n_neuron;
     
-
-    
+      
 }
+
+
 
 Layer ::~Layer() {
 

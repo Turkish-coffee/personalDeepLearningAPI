@@ -15,14 +15,16 @@ class Layer {
 
         //Storing the inputs from the previous layer, the wieghts and biases
         //into 2Darrays, storing the forward operation in the result one
-        matrix **input;
-        matrix ** weights;
-        matrix **bias;
-        matrix **result;
+
+        matrix *input;
+        matrix *weights;
+        matrix *bias;
+        matrix *result;
     
         ActivationFunction activationFunction;
 
         Layer(unsigned int n_neuron, std::string activationFunctionName);
+        
         virtual ~Layer();
  
         

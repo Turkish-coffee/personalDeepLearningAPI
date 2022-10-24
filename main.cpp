@@ -27,7 +27,11 @@ int main() {
 
     for (auto elm : network->NETWORK_LAYERS)
     {
-        std::cout << elm.neuronNumber << std::endl;
+        std::cout <<"neuron number : " << elm.neuronNumber << std::endl << std::endl;
+        std::cout << "input : " << elm.input->xDim << " x " << elm.input->yDim << std::endl;
+        std::cout << "weights : " << elm.weights->xDim << " x " << elm.weights->yDim << std::endl;
+        std::cout<< "bias : " << elm.bias->xDim << " x " << elm.bias->yDim << std::endl;
+        std::cout << "result : " << elm.result->xDim << " x " << elm.result->yDim << std::endl << std::endl;
     }
     
 

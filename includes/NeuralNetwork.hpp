@@ -18,8 +18,8 @@ public:
 
     std::vector<Layer> NETWORK_LAYERS;
 
-    Optimizer *Optimizer;
-    Loss *Loss;
+    Optimizer *optimizer;
+    Loss *loss;
 
     //constructor / destructor 
     NN(std::string NNtype);

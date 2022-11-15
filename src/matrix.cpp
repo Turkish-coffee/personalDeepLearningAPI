@@ -70,7 +70,7 @@ void matrix::randomizeMatrix(const matrix &x1) {
 
     for (int i = 0; i < x1.xDim; i++)
     {
-        for (int j = 0; j < x1.yDim; i++)
+        for (int j = 0; j < x1.yDim; j++)
         {
             x1.head[i][j] = distr(eng)/(10 * MAX);
         }

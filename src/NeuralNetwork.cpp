@@ -95,8 +95,11 @@ void ANN::AddLayer(unsigned int NEURON_NUMBER, std::string activationFunction) {
     if(this->NETWORK_SIZE == 0) {
         this->NETWORK_LAYERS.push_back(Layer(NEURON_NUMBER, activationFunction));
         this->NETWORK_LAYERS[0].input =  new matrix(1, this->INPUT_SIZE);
-
         this->NETWORK_LAYERS[0].weights =  new matrix(this->NETWORK_LAYERS[0].input->yDim, NEURON_NUMBER);
+
+        matrix::randomizeMatrix(*this->NETWORK_LAYERS[0].weights);
+        
+
         this->NETWORK_LAYERS[0].bias = new matrix(1, NEURON_NUMBER, 0.0);
         this->NETWORK_LAYERS[0].result = new matrix(1, NEURON_NUMBER);
         this->NETWORK_SIZE ++;
@@ -108,6 +111,9 @@ void ANN::AddLayer(unsigned int NEURON_NUMBER, std::string activationFunction) {
     this->NETWORK_LAYERS[NETWORK_SIZE].input = new matrix(1, this->NETWORK_LAYERS[NETWORK_SIZE - 1].result->yDim);
 
     this->NETWORK_LAYERS[NETWORK_SIZE].weights = new matrix(this->NETWORK_LAYERS[NETWORK_SIZE - 1].result->yDim, NEURON_NUMBER);
+
+    matrix::randomizeMatrix(*this->NETWORK_LAYERS[NETWORK_SIZE].weights);
+
     this->NETWORK_LAYERS[NETWORK_SIZE].bias = new matrix(1, NEURON_NUMBER, 0.0);
     this->NETWORK_LAYERS[NETWORK_SIZE].result = new matrix(1, NEURON_NUMBER);
     this->NETWORK_SIZE ++;

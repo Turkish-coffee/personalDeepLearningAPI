@@ -21,9 +21,10 @@ class Layer {
         matrix *bias;
         matrix *result;
     
-        ActivationFunction activationFunction;
+        ActivationFunction *activationFunction;
 
-        Layer(unsigned int n_neuron, std::string activationFunctionName);
+        Layer(unsigned int n_neuron, std::string actvFunName);
+        void Calculate();
         
         virtual ~Layer();
  
